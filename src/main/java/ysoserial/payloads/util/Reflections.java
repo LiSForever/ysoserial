@@ -41,7 +41,8 @@ public class Reflections {
 	}
 
 	public static void setFieldValue(final Object obj, final String fieldName, final Object value) throws Exception {
-		final Field field = getField(obj.getClass(), fieldName);
+		Class clazz = obj.getClass();
+        final Field field = getField(clazz, fieldName);
 		field.set(obj, value);
 	}
 
